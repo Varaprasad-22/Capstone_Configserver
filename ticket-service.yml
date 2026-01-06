@@ -1,0 +1,32 @@
+spring:
+  data:
+    mongodb:
+      host: mongodb
+      port: 27017
+      database: ticketSystem
+
+  rabbitmq:
+    host: rabbitmq
+    port: 5672
+    username: guest
+    password: guest
+
+  server:
+    port: 9093
+
+# Eureka Setup
+eureka:
+  client:
+    register-with-eureka: true
+    serviceUrl:
+      defaultZone: http://localhost:9090/eureka/
+  instance:
+    prefer-ip-address: true
+
+spring:
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
