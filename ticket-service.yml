@@ -1,4 +1,7 @@
 spring:
+  application:
+    name: ticket-service
+
   data:
     mongodb:
       host: mongodb
@@ -11,22 +14,21 @@ spring:
     username: guest
     password: guest
 
-  server:
-    port: 9093
-
-# Eureka Setup
-eureka:
-  client:
-    register-with-eureka: true
-    serviceUrl:
-      defaultZone: http://eureka-server:9090/eureka/
-  instance:
-    prefer-ip-address: true
-
-spring:
   cloud:
     gateway:
       discovery:
         locator:
           enabled: true
           lower-case-service-id: true
+
+server:
+  port: 9093
+
+# Eureka Setup
+eureka:
+  client:
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://eureka-server:9090/eureka/
+  instance:
+    prefer-ip-address: true
